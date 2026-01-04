@@ -33,6 +33,7 @@ function SignIn() {
                     placeholder="Enter your email"
                     register={register}
                     error={errors.email}
+                    type="email"
                     validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
                 />
 
