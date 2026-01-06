@@ -3,7 +3,6 @@ import  connectDB  from "../database/mongoose";
 
 async function main() {
     try {
-        console.log(process.env.MONGODB_URI);
         await connectDB();
         // If connectToDatabase resolves without throwing, connection is OK
         console.log("OK: Database connection succeeded");

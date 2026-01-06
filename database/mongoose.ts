@@ -33,7 +33,7 @@ const connectDb = async ()=>{
         throw err;
     }
 
-    console.log(`Connected to database ${process.env.NODE_ENV} - ${MONGODB_URI}`);
+    console.log(`Connected to database ${process.env.NODE_ENV} `);
 
     return cached.conn;
 }
