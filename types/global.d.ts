@@ -1,5 +1,6 @@
 import {FieldError, UseFormRegister} from "react-hook-form";
 import {Control} from "react-hook-form";
+import {typeOf} from "uri-js/dist/esnext/util";
 
 declare global{
     interface SignInFormData {
@@ -52,4 +53,19 @@ declare global{
         href: string;
         linkText: string;
     }
+
+    type WelcomeEmailData = {
+        email: string;
+        name: string;
+        intro: string;
+    };
+
+    type User = {
+        id: string;
+        name: string;
+        email: string;
+    };
+
 }
+
+export {}

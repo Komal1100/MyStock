@@ -8,9 +8,12 @@ import {INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS} from "@/
 import InputField from "@/components/forms/InputField";
 import CountrySelectField from "@/components/forms/CountrySelectField";
 import FooterLink from "@/components/forms/FooterLink";
-
+import {toast} from "sonner";
+import {signUpWithEmail} from "@/lib/actions/auth.action";
+import router, {useRouter} from "next/navigation";
 
 function SignUp() {
+    const router = useRouter();
     const {
         register,
         handleSubmit,
@@ -31,9 +34,16 @@ function SignUp() {
 
     const onSubmit = async (data:SignUpFormData) => {
         try{
-            console.log(data)
-        }catch (e) {
+            const result  = await signUpWithEmail(data);
+            console.log(result.success);
+            if(result.success) router.push("/");
+        }catch (e ) {
             console.log(e)
+            toast.error('Sign-up failed',
+                {
+                    description: e instanceof Error ?  e.message : 'Failed to sing up',
+                }
+            )
         }
     }
 
@@ -41,7 +51,12 @@ function SignUp() {
     return (
         <>
             <h1 className="form-title">Sign Up & Personalize</h1>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <form onSubmit={handleSubmit(
+                onSubmit,
+                (errors) => {
+                    console.log("FORM ERRORS:", errors);
+                }
+            )} className="space-y-5">
                 <InputField name="fullName"
                             label="Full Name"
                             placeholder="Jay Parmar"
@@ -56,7 +71,13 @@ function SignUp() {
                     placeholder="contact@jsmastery.com"
                     register={register}
                     error={errors.email}
-                    validation={{ required: 'Email name is required', pattern: /^\w+@\w+\.\w+$/, message: 'Email address is required' }}
+                    validation={{
+                        required: 'Email is required',
+                        pattern: {
+                            value: /^\w+@\w+\.\w+$/,
+                            message: 'Invalid email address',
+                        },
+                    }}
                 />
                 <InputField
                     name="password"
@@ -105,7 +126,7 @@ function SignUp() {
 
 
 
-                <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
+                <Button type="submit"  className="yellow-btn w-full mt-5">
                     {isSubmitting ? 'Creating Account' : 'Start Your Investing Journey'}
                 </Button>
 
