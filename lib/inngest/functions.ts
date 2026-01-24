@@ -92,7 +92,7 @@ export const sendDailyNewsSummary = inngest.createFunction(
 
         // Step 3: Summerize news via AI
 
-        const userNewsSummaries : {user: User; newsContent : string|null}[] = [];
+        const userNewsSummaries : {user: UserForNewsEmail; newsContent : string|null}[] = [];
 
         for(const {user , articles} of results) {
             try{
