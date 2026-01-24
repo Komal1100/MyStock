@@ -9,7 +9,7 @@ import InputField from "@/components/forms/InputField";
 import CountrySelectField from "@/components/forms/CountrySelectField";
 import FooterLink from "@/components/forms/FooterLink";
 import {toast} from "sonner";
-import {signUpWithEmail} from "@/lib/actions/auth.action";
+import {signUpWithEmail} from "@/lib/actions/auth.actions";
 import router, {useRouter} from "next/navigation";
 
 function SignUp() {

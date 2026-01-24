@@ -7,7 +7,7 @@ async function Layout({children} : {children: React.ReactNode}) {
 
     const session = await auth.api.getSession({headers:await headers()});
 
-    if(!session) redirect("/login");
+    if(!session) redirect("/signin");
 
     const user = {
         name: session.user.name,
