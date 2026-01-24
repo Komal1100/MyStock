@@ -66,6 +66,38 @@ declare global{
         email: string;
     };
 
+    type MarketNewsArticle = {
+        id: number;
+        headline: string;
+        summary: string;
+        source: string;
+        url: string;
+        datetime: number;
+        category: string;
+        related: string;
+        image?: string;
+    }
+    type RawNewsArticle = {
+        id: number;
+        headline?: string;
+        summary?: string;
+        source?: string;
+        url?: string;
+        datetime?: number;
+        image?: string;
+        category?: string;
+        related?: string;
+    };
+
+    type UserForNewsEmail ={
+        id : string;
+        email: string;
+        name: string;
+        country: string;
+    }
+
 }
+
+
 
 export {}
