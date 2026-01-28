@@ -96,6 +96,37 @@ declare global{
         country: string;
     }
 
+    type SearchCommandProps = {
+        renderAs?: 'button' | 'text';
+        label?: string;
+        initialStocks: StockWithWatchlistStatus[];
+    };
+
+    type Stock = {
+        symbol: string;
+        name: string;
+        exchange: string;
+        type: string;
+    };
+
+    type FinnhubSearchResult = {
+        symbol: string;
+        description: string;
+        displaySymbol?: string;
+        type: string;
+    };
+
+    type StockWithWatchlistStatus = Stock & {
+        isInWatchlist: boolean;
+    };
+
+    type FinnhubSearchResponse = {
+        count: number;
+        result: FinnhubSearchResult[];
+    };
+
+
+
 }
 
 
