@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 MyStock - Smart Stock Management Web Application
 
-## Getting Started
+MyStock is a full-stack web application that allows users to manage and track stock-related data efficiently. It goes beyond basic CRUD functionality by integrating user engagement features like automated emails and daily stock news updates.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📌 Core Features
+- Add new stock items
+- View all stocks
+- Update stock details
+- Delete stock entries
+- RESTful API integration
+- Clean and responsive UI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🔥 Advanced Features
+- 📧 Automatic Welcome Email on Signup
+- 📰 Daily Stock News Summary (via external API)
+- ⏰ Scheduled background jobs using cron
+- 🔄 Dynamic API-based data updates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
+- HTML
+- CSS
+- JavaScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+- Node.js
+- Express.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Database
+- MongoDB (Mongoose)
 
-## Deploy on Vercel
+### Integrations
+- Nodemailer (Email Service)
+- Tradingview API (for stock-related news)
+- Inngest
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
